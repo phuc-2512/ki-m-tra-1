@@ -1,37 +1,57 @@
-// Mảng ban đầu
-// Bài 1
-let m = [1, 2, 3, 4, 5, 6, "hh", "9", 80, 100];
+class Timer {
+    constructor(element) {
+        this.element = element;
+        this.display = element.querySelector('.display');
+        this.startBtn = element.querySelector('.start');
+        this.pauseBtn = element.querySelector('.pause');
+        this.stopBtn = element.querySelector('.stop');
+        this.time = 0;
+        this.interval = null;
 
-// Xóa chữ
-m1 = m.filter(item => typeof item === 'number');
+        this.startBtn.addEventListener('click', () => this.start());
+        this.pauseBtn.addEventListener('click', () => this.pause());
+        this.stopBtn.addEventListener('click', () => this.stop());
+    }
 
-console.log(m1);
+    start() {
+        if (!this.interval) {
+            this.interval = setInterval(() => {
+                this.time += 10;
+                this.updateDisplay();
+            }, 10);
+        }
+    }
 
-// Tạo mảng mSquared
-let mSquared = m1.map(item => Math.pow(item, 2));
+    pause() {
+        clearInterval(this.interval);
+        this.interval = null;
+    }
 
-console.log(mSquared);
+    stop() {
+        this.pause();
+        this.time = 0;
+        this.updateDisplay();
+    }
 
-// Hiển thị kiểu dữ liệu của các phần tử trong mảng ban đầu
-m.forEach(item => {
-    console.log(`${item}: ${typeof item}`);
+    updateDisplay() {
+        const minutes = Math.floor(this.time / 60000);
+        const seconds = Math.floor((this.time % 60000) / 1000);
+        const centiseconds = Math.floor((this.time % 1000) / 10);
+        this.display.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}.${centiseconds.toString().padStart(2, '0')}`;
+    }
+}
+
+const timerElements = document.querySelectorAll('.timer');
+const timers = Array.from(timerElements).map(element => new Timer(element));
+
+document.getElementById('startAll').addEventListener('click', () => {
+    timers.forEach(timer => timer.start());
 });
 
-// Bài 2
-// Chuỗi ban đầu
-const originalString = " High knowledge, high return";
+document.getElementById('pauseAll').addEventListener('click', () => {
+    timers.forEach(timer => timer.pause());
+});
 
-// Chuyển chuỗi thành mảng
-let arr = originalString.split('');
-
-console.log(arr);
-
-// Xóa bỏ khoảng trắng và chuyển chữ hoa thành chữ thường
-arr = arr.filter(char => char !== ' ').map(char => char.toLowerCase());
-
-console.log(arr);
-
-// Chuyển đổi mảng thành chuỗi để hiển thị kết quả cuối cùng
-const finalString = arr.join('');
-
-console.log(finalString);
+document.getElementById('stopAll').addEventListener('click', () => {
+    timers.forEach(timer => timer.stop());
+});
