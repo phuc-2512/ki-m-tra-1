@@ -1,64 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Timer UI</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-
-<body>
-    <div class="container">
-        <div class="global-controls">
-            <button id="startAll" class="global-button">Start All</button>
-            <button id="pauseAll" class="global-button">Pause All</button>
-            <button id="stopAll" class="global-button">Stop All</button>
-        </div>
-        <div class="timers">
-            <div class="timer" id="timer1">
-                <div class="display">00:00.00</div>
-                <div class="controls">
-                    <button class="control-button start">Start</button>
-                    <button class="control-button pause">Pause</button>
-                    <button class="control-button stop">Stop</button>
-                </div>
-            </div>
-            <div class="timer" id="timer2">
-                <div class="display">00:00.00</div>
-                <div class="controls">
-                    <button class="control-button start">Start</button>
-                    <button class="control-button pause">Pause</button>
-                    <button class="control-button stop">Stop</button>
-                </div>
-            </div>
-            <div class="timer" id="timer3">
-                <div class="display">00:00.00</div>
-                <div class="controls">
-                    <button class="control-button start">Start</button>
-                    <button class="control-button pause">Pause</button>
-                    <button class="control-button stop">Stop</button>
-                </div>
-            </div>
-            <div class="timer" id="timer4">
-                <div class="display">00:00.00</div>
-                <div class="controls">
-                    <button class="control-button start">Start</button>
-                    <button class="control-button pause">Pause</button>
-                    <button class="control-button stop">Stop</button>
-                </div>
-            </div>
-            <div class="timer" id="timer5">
-                <div class="display">00:00.00</div>
-                <div class="controls">
-                    <button class="control-button start">Start</button>
-                    <button class="control-button pause">Pause</button>
-                    <button class="control-button stop">Stop</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="./js.js"></script>
-</body>
-
-</html>
+<div style="background: linear-gradient(135deg, #1e3c72, #2a5298); padding: 20px; border-radius: 10px; font-family: Arial, sans-serif; color: white; position: relative; overflow: hidden;">
+  <h2 style="text-align: center; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Quy trình xây dựng mô hình dự đoán giá cổ phiếu</h2>
+  
+  <div style="display: flex; justify-content: space-around; margin: 20px 0;">
+      <div style="background: rgba(255,255,255,0.1); border-radius: 10px; padding: 15px; width: 90%;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+              <!-- Step 1: Data Collection -->
+              <div style="text-align: center; width: 18%;">
+                  <div style="background: #4a69bb; border-radius: 50%; width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+                      <span style="font-size: 24px;">1</span>
+                  </div>
+                  <h4>Thu thập dữ liệu</h4>
+                  <p style="font-size: 12px;">Giá cổ phiếu lịch sử, chỉ số tài chính, tin tức</p>
+              </div>
+              <!-- Arrow -->
+              <div style="font-size: 24px;">➔</div>
+              <!-- Step 2: Data Preprocessing -->
+              <div style="text-align: center; width: 18%;">
+                  <div style="background: #4a69bb; border-radius: 50%; width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+                      <span style="font-size: 24px;">2</span>
+                  </div>
+                  <h4>Tiền xử lý dữ liệu</h4>
+                  <p style="font-size: 12px;">Làm sạch, chuẩn hóa, xử lý missing values</p>
+              </div>
+              <!-- Arrow -->
+              <div style="font-size: 24px;">➔</div>
+              <!-- Step 3: Feature Engineering -->
+              <div style="text-align: center; width: 18%;">
+                  <div style="background: #4a69bb; border-radius: 50%; width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+                      <span style="font-size: 24px;">3</span>
+                  </div>
+                  <h4>Feature Engineering</h4>
+                  <p style="font-size: 12px;">Tạo các chỉ báo kỹ thuật, sentiment analysis</p>
+              </div>
+              <!-- Arrow -->
+              <div style="font-size: 24px;">➔</div>
+              <!-- Step 4: Model Training -->
+              <div style="text-align: center; width: 18%;">
+                  <div style="background: #4a69bb; border-radius: 50%; width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+                      <span style="font-size: 24px;">4</span>
+                  </div>
+                  <h4>Huấn luyện mô hình</h4>
+                  <p style="font-size: 12px;">Random Forest, Neural Networks, LSTM</p>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  <div style="margin-top: 20px; text-align: center; font-style: italic;">
+      <p>Quy trình này giúp xây dựng mô hình dự đoán chính xác và đáng tin cậy cho thị trường tài chính.</p>
+  </div>
+</div>
